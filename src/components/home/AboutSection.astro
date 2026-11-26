@@ -38,7 +38,7 @@ const tenets = [
     <!-- Editorial Section Header -->
     <div class="grid grid-cols-1 lg:grid-cols-12 border-t-2 border-x border-b border-[var(--line-strong)] bg-[var(--bg-elevated)] reveal-on-scroll">
       <div class="lg:col-span-3 p-6 sm:p-8 bg-[#143a8a] text-white keep-white border-b lg:border-b-0 lg:border-r border-[var(--line-strong)] flex flex-col justify-between">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.24em] text-[#ffd4c8] keep-white">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.24em] text-[#ffd4c8] keep-white">
           01 // ABOUT
         </div>
         <div class="my-6">
@@ -47,13 +47,13 @@ const tenets = [
           </div>
           <div class="h-1 w-14 bg-[#d9532f] mt-3"></div>
         </div>
-        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/80 keep-white">
+        <div class="font-mono text-[12px] uppercase tracking-[0.2em] text-white/80 keep-white">
           PHILOSOPHY OF CRAFT // HUIT
         </div>
       </div>
 
       <div class="lg:col-span-9 p-6 sm:p-10 lg:p-14 space-y-8">
-        <div class="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--accent-secondary)] font-bold">
+        <div class="font-mono text-[13px] uppercase tracking-[0.24em] text-[var(--accent-secondary)] font-bold">
           {lang === "vi"
             ? "TUYÊN NGÔN THIẾT KẾ & KỸ THUẬT PHẦN MỀM"
             : "ARCHITECTURAL STATEMENT & ENGINEERING PHILOSOPHY"}
@@ -102,7 +102,7 @@ const tenets = [
           ]}
         >
           <div class="flex items-center justify-between border-b border-[var(--line)] pb-3">
-            <span class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--accent-secondary)]">
+            <span class="font-mono text-[13px] font-bold uppercase tracking-[0.22em] text-[var(--accent-secondary)]">
               0{idx + 1} // {tenet.code}
             </span>
             <span class="h-2.5 w-2.5 bg-[var(--accent)]"></span>
@@ -111,7 +111,7 @@ const tenets = [
             <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[var(--text)] leading-tight">
               {tenet.title}
             </h3>
-            <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+            <p class="text-base sm:text-base text-[var(--text-secondary)] leading-relaxed">
               {tenet.body}
             </p>
           </div>

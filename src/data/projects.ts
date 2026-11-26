@@ -528,12 +528,12 @@ export const engineeringProjects: EngineeringProject[] = [
     demoUrl: "https://giborcoffee.vercel.app/",
     demoNoteEn: "Live deployment hosted on Vercel with active regional branch finder, product catalog, and responsive dark/light theme.",
     demoNoteVi: "Bản triển khai thực tế trên Vercel với đầy đủ tính năng tra cứu chi nhánh theo khu vực, thực đơn và chuyển đổi giao diện Sáng/Tối.",
-    coverImage: "/assets/img/projects/gibor-coffee-web-hero.png",
+    coverImage: "/assets/img/projects/gibor-coffee-storefront.png",
     secondaryImage: "/assets/img/projects/gibor-coffee-web-branches.png",
     architectureDiagram: "/assets/img/projects/gibor-web-architecture.svg",
     gallery: [
       {
-        src: "/assets/img/projects/gibor-coffee-web-hero.png",
+        src: "/assets/img/projects/gibor-coffee-storefront.png",
         captionEn: "Live Home Page (`index.html` & `home.css`) implemented by Trần Gia Bảo as Frontend Lead — giborcoffee.vercel.app",
         captionVi: "Giao diện Trang chủ thực tế (`index.html` & `home.css`) do Trần Gia Bảo (Frontend Lead) xây dựng — giborcoffee.vercel.app",
         kind: "screenshot",

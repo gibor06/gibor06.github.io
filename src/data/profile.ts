@@ -22,7 +22,7 @@ export const profile = {
   academicYearVi: "Sinh viên Năm 3 (Niên khóa 2024 – 2028)",
   availability: "Open for Full-Stack / .NET / Web Developer Internships",
   availabilityVi: "Sẵn sàng cho vị trí Thực tập sinh Full-Stack / .NET / Web Developer",
-  email: "trangiabao2909@gmail.com",
+  email: "gibor06.dev@gmail.com",
   github: "https://github.com/gibor06",
   githubPortfolioRepo: "https://github.com/gibor06/GIBOR06_portfolio",
   linkedin: "https://www.linkedin.com/in/gibor06/",

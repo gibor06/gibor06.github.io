@@ -58,7 +58,7 @@ const selectedWorks = [
     <!-- Editorial Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between pb-10 border-b-2 border-[var(--line-strong)] gap-6 reveal-on-scroll">
       <div class="space-y-3">
-        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-secondary)]">
+        <div class="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-[0.24em] text-[var(--accent-secondary)]">
           <span class="h-2 w-2 bg-[var(--accent)]"></span>
           <span>03 // SELECTED WORKS — CURATED ARCHIVE</span>
         </div>
@@ -66,7 +66,7 @@ const selectedWorks = [
           {lang === "vi" ? "Tác Phẩm Tuyển Chọn" : "Selected Works"}
         </h2>
       </div>
-      <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--text-muted)] max-w-md">
+      <p class="font-mono text-sm uppercase tracking-[0.18em] text-[var(--text-muted)] max-w-md">
         {lang === "vi"
           ? "BỐN CÔNG TRÌNH TIÊU BIỂU ĐƯỢC CHỌN LỌC — TỐI GIẢN VỀ HÌNH THỨC, SÂU SẮC VỀ CẤU TRÚC KỸ THUẬT."
           : "FOUR CURATED WORKS — MINIMAL IN PRESENTATION, ARCHITECTURAL IN DEPTH."}
@@ -89,7 +89,7 @@ const selectedWorks = [
             <div class="flex items-center justify-between border-b border-[var(--line)] pb-4">
               <div class="flex items-center gap-3">
                 <span class={`inline-block h-4 w-4 ${work.accent}`}></span>
-                <span class="font-mono text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-secondary)]">
+                <span class="font-mono text-sm font-bold uppercase tracking-[0.24em] text-[var(--accent-secondary)]">
                   WORK // {work.index}
                 </span>
               </div>
@@ -97,10 +97,10 @@ const selectedWorks = [
                 href={work.href}
                 target="_blank"
                 rel="noreferrer"
-                class="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors"
+                class="font-mono text-[13px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors"
                 aria-label={work.title}
               >
-                {lang === "vi" ? "MÃ NGUỒN ↗" : "ARCHIVE ↗"}
+                {lang === "vi" ? "MÃ NGUỒN " : "ARCHIVE "}
               </a>
             </div>
 

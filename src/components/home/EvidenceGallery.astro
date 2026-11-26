@@ -1,0 +1,24 @@
+---
+import { withBase } from '@i18n/utils';
+interface Props { lang: 'en' | 'vi' }
+const { lang } = Astro.props;
+const vi = lang === 'vi';
+const evidence = [
+  ['fair-sft-packing.jpg', '2026', 'FAIR XIX · SFT Packing', vi ? 'Chứng nhận báo cáo · Tác giả chính' : 'Presentation certificate · Lead author'],
+  ['fair-truck-loading.jpg', '2026', 'FAIR XIX · Truck Loading', vi ? 'Chứng nhận báo cáo · Đồng tác giả' : 'Presentation certificate · Co-author'],
+  ['research-award-2026.png', '2026', vi ? 'Nghiên cứu khai phá dữ liệu' : 'Data mining research', vi ? 'Giải Khuyến khích · Cấp khoa' : 'Consolation prize · Faculty'],
+  ['research-finalist-2026.jpg', '2026', vi ? 'Cross High-Utility Itemset Mining' : 'Cross High-Utility Itemset Mining', vi ? 'Vòng chung kết · Cấp khoa' : 'Finalist · Faculty'],
+  ['research-second-2025.jpg', '2025', vi ? 'Thuật toán EMHUN' : 'EMHUN algorithm', vi ? 'Giải Nhì NCKH · Cấp khoa' : 'Second prize · Faculty research'],
+  ['research-third-2025.jpg', '2025', 'Multi Aura · PhoBERT', vi ? 'Giải Ba NCKH · Cấp khoa' : 'Third prize · Faculty research'],
+  ['database-award-2025.jpg', '2025', 'Database Design Challenge', vi ? 'Giải Khuyến khích · Cấp khoa' : 'Consolation prize · Faculty'],
+  ['data-science-yolo-2025.png', '2025', 'YOLO + SAM-ViT', vi ? 'Chung kết Khoa học dữ liệu · HUIT' : 'Data Science finalist · HUIT'],
+  ['data-science-vit-2025.png', '2025', 'Vision Transformer', vi ? 'Chung kết Khoa học dữ liệu · HUIT' : 'Data Science finalist · HUIT'],
+  ['excellent-student-2025.jpg', '2025', vi ? 'Sinh viên Giỏi' : 'Academic excellence', vi ? 'Năm học 2024–2025 · HUIT' : 'Academic year 2024–2025 · HUIT'],
+];
+---
+<section id="evidence" class="section wrap evidence-section">
+
+  <div class="evidence-motion-tools"><span>{vi ? '10 DẤU MỐC · 2025–2026' : '10 MILESTONES · 2025–2026'}</span></div>
+  <div class="evidence-motion">{[evidence].map((row,rowIndex) => <div class:list={['evidence-lane', { 'lane-reverse':rowIndex===1 }]}><div class="evidence-track">{[0,1].map(copy => <div class="evidence-group" aria-hidden={copy===1 ? 'true' : undefined}>{row.map(([file,year,title,caption]) => <a class="evidence-card" href={withBase(`/assets/img/story/${file}`)} data-evidence data-caption={`${title} — ${caption}`} tabindex={copy===1 ? -1 : undefined} target="_blank" rel="noreferrer"><div class="evidence-image"><img src={withBase(`/assets/img/story/${file}`)} alt={copy===1 ? '' : `${title} — ${caption}`} loading="lazy" width="900" height="650" /><span class="evidence-zoom">{vi ? 'Xem đầy đủ' : 'View document'}</span></div><div class="evidence-meta"><span>{year}</span><span>HUIT</span></div><h3>{title}</h3><p>{caption}</p></a>)}</div>)}</div></div>)}</div>
+</section>
+<dialog class="evidence-dialog" aria-label={vi ? 'Xem minh chứng' : 'Document viewer'}><div class="evidence-dialog-bar"><p class="evidence-dialog-caption"></p><button class="evidence-close" aria-label={vi ? 'Đóng ảnh' : 'Close image'}>×</button></div><div class="evidence-dialog-image"><img alt="" /></div></dialog>

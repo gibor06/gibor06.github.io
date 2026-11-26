@@ -1,0 +1,22 @@
+---
+interface Props { lang: 'en' | 'vi' }
+const { lang } = Astro.props;
+const vi = lang === 'vi';
+const t = (en: string, vn: string) => vi ? vn : en;
+const strengths = [
+  { n:'01', title:t('Business context, connected','Hiểu bối cảnh cửa hàng'), text:t('Sales, orders, inventory and revenue provide a shared context for spotting what needs attention.', 'Kết nối dữ liệu bán hàng, đơn hàng, tồn kho và doanh thu để xác định những vấn đề cần chú ý trong vận hành.') },
+  { n:'02', title:t('Ask in everyday language','Hỏi dữ liệu bằng ngôn ngữ tự nhiên'), text:t('The product demo illustrates questions about daily revenue, best sellers and products running low, without navigating separate reports.', 'Bản demo minh họa cách hỏi doanh thu hôm nay, sản phẩm bán chạy hoặc hàng sắp hết mà không phải mở từng báo cáo.') },
+  { n:'03', title:t('Recommendations with context','Đề xuất gắn với dữ liệu'), text:t('Low-stock and sales signals inform suggested next steps, such as reviewing incoming stock and replenishment plans.', 'Từ tín hiệu tồn kho thấp và lượng bán, AI gợi ý bước kiểm tra tiếp theo, như đối chiếu hàng đang về và kế hoạch nhập hàng.') },
+  { n:'04', title:t('People stay in control','Chủ cửa hàng giữ quyền quyết định'), text:t('The proposed agentic workflow includes owner approval before execution, keeping decisions with the person responsible for the shop.', 'Quy trình Agentic được giới thiệu có bước chủ cửa hàng phê duyệt trước khi thực hiện, giúp người dùng giữ quyền kiểm soát.') },
+];
+const steps = [t('Detect','Phát hiện'),t('Analyze','Phân tích'),t('Recommend','Đề xuất'),t('Owner approves','Chủ cửa hàng duyệt'),t('Execute','Thực hiện')];
+---
+<section id="jelly" class="study-section jelly-section reveal" data-section-number="02">
+  <p class="study-section-index">02 / AGENTIC AI · JELLY</p>
+  <h2>{t('Jelly brings the next step into view.','Jelly giúp thấy rõ việc cần làm tiếp theo.')}</h2>
+  <p class="study-lead">{t('MarkAI applies agentic AI through Jelly, a retail assistant designed around connected shop data. The emphasis is on understanding the situation and suggesting a useful next step.', 'MarkAI ứng dụng Agentic AI thông qua trợ lý Jelly, đặt AI trong bối cảnh dữ liệu thực tế của cửa hàng. Điểm nhấn là đọc tình hình kinh doanh và gợi ý hành động phù hợp.')}</p>
+  <div class="jelly-intro"><div><span class="jelly-eyebrow">MARKAI INTELLIGENCE</span><h3>{t('From business data to informed action.','Từ dữ liệu kinh doanh đến hành động có cơ sở.')}</h3><p>{t('A shared workspace for shop operations and AI assistance, with a clear link between the signal, the recommendation and the owner’s decision.', 'Kết hợp công cụ vận hành với trợ lý AI trong cùng không gian làm việc; kết nối tín hiệu từ dữ liệu, đề xuất xử lý và quyết định của chủ cửa hàng.')}</p></div><div class="jelly-context"><span>Jelly</span><strong>{t('Sales + Stock + Revenue','Bán hàng + Tồn kho + Doanh thu')}</strong><small>{t('Context for decisions','Bối cảnh cho quyết định')}</small></div></div>
+  <div class="study-feature-grid jelly-strengths">{strengths.map(item => <article><span>{item.n}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+  <div class="jelly-flow"><div class="jelly-flow-heading"><span>{t('AGENTIC WORKFLOW','QUY TRÌNH AGENTIC')}</span><span>{t('ILLUSTRATED PRODUCT DIRECTION','ĐỊNH HƯỚNG ĐƯỢC MINH HỌA')}</span></div><ol>{steps.map((step,i) => <li class:list={{'approval-step':i===3}}><span>{String(i+1).padStart(2,'0')}</span><strong>{step}</strong></li>)}</ol></div>
+  <p class="jelly-source-note">{t('The public website demonstrates this workflow with sample data and presents advanced agentic capabilities as planned features. ', 'Website công khai minh họa quy trình bằng dữ liệu mẫu và giới thiệu các khả năng Agentic nâng cao trong định hướng sản phẩm. ')}<a href="https://marketai.site/" target="_blank" rel="noreferrer">{t('Explore MarkAI Intelligence','Tìm hiểu MarkAI Intelligence')}</a></p>
+</section>

@@ -91,14 +91,14 @@ const uxModules = [
     <!-- Section Header -->
     <div class="reveal-on-scroll flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-[var(--line-subtle)] pb-8">
       <div class="space-y-3">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#d9532f]">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#d9532f]">
           00.5 // {isVi ? "TRIẾT LÝ THIẾT KẾ & TỐI ƯU HÓA TRẢI NGHIỆM UI/UX" : "UI/UX ENGINEERING & INTERACTIVE EXPERIENCE LAB"}
         </div>
         <h2 class="display-section-title uppercase">
           {isVi ? "Đa Dạng Hóa Ứng Dụng & Trải Nghiệm Người Dùng" : "Human-Centered UI/UX & System Craft"}
         </h2>
       </div>
-      <p class="max-w-xl text-sm text-[var(--text-secondary)] leading-relaxed">
+      <p class="max-w-xl text-base text-[var(--text-secondary)] leading-relaxed">
         {isVi
           ? "Một sản phẩm phần mềm đẳng cấp không chỉ chạy đúng ở tầng cơ sở dữ liệu mà còn phải mang lại cảm giác trực quan, sắc nét và giàu cảm hứng ở mọi điểm chạm với người dùng."
           : "World-class software is defined not only by how reliably its database transactions execute, but by how直观, responsive, and inspiring every human interaction feels."}
@@ -120,11 +120,11 @@ const uxModules = [
                 : "bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-elevated)]"
             }`}
           >
-            <div class="flex items-center justify-between font-mono text-xs">
+            <div class="flex items-center justify-between font-mono text-sm">
               <span class={`font-bold ${idx === 0 ? "text-[#ffb89e] keep-white" : "text-[#d9532f]"}`}>
                 {mod.idx} // UX PILLAR
               </span>
-              <span class={idx === 0 ? "text-white keep-white" : "text-[var(--text-muted)]"}>→</span>
+              <span class={idx === 0 ? "text-white keep-white" : "text-[var(--text-muted)]"}></span>
             </div>
             <div class={`text-base sm:text-lg font-extrabold uppercase tracking-tight ${idx === 0 ? "keep-white" : ""}`}>
               {isVi ? mod.tabVi : mod.tabEn}
@@ -134,10 +134,10 @@ const uxModules = [
 
         <!-- Live Interactive Theme Preview Box at Bottom of Left Column -->
         <div class="p-6 bg-[var(--bg-elevated)] space-y-3">
-          <div class="font-mono text-[10px] font-bold uppercase tracking-widest text-[var(--text-muted)]">
+          <div class="font-mono text-[12px] font-bold uppercase tracking-widest text-[var(--text-muted)]">
             {isVi ? "THỬ NGHIỆM CHUYỂN ĐỔI SẮC ĐỘ TRANG WEB:" : "TEST LIVE WEBSITE COLOR ARCHITECTURE:"}
           </div>
-          <div class="grid grid-cols-3 gap-2 font-mono text-[11px] font-bold">
+          <div class="grid grid-cols-3 gap-2 font-mono text-[13px] font-bold">
             <button
               type="button"
               data-set-theme="alabaster"
@@ -171,13 +171,13 @@ const uxModules = [
             class={`ux-panel space-y-8 ${idx === 0 ? "block" : "hidden"}`}
           >
             <div class="space-y-4">
-              <div class="inline-flex items-center gap-2 bg-[#d9532f] text-white keep-white px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-widest">
+              <div class="inline-flex items-center gap-2 bg-[#d9532f] text-white keep-white px-3 py-1 font-mono text-[13px] font-bold uppercase tracking-widest">
                 <span class="keep-white">{isVi ? mod.kickerVi : mod.kickerEn}</span>
               </div>
               <h3 class="text-2xl sm:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.08]">
                 {isVi ? mod.titleVi : mod.titleEn}
               </h3>
-              <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+              <p class="text-base sm:text-base text-[var(--text-secondary)] leading-relaxed">
                 {isVi ? mod.descVi : mod.descEn}
               </p>
             </div>
@@ -186,7 +186,7 @@ const uxModules = [
             <div class="grid grid-cols-1 sm:grid-cols-3 border-t border-l border-[var(--line-subtle)] bg-[var(--bg-base)]">
               {mod.metrics.map((m) => (
                 <div class="border-r border-b border-[var(--line-subtle)] p-5 space-y-1.5">
-                  <div class="font-mono text-[10px] font-bold uppercase tracking-widest text-[#d9532f]">
+                  <div class="font-mono text-[12px] font-bold uppercase tracking-widest text-[#d9532f]">
                     {isVi ? m.labelVi : m.labelEn}
                   </div>
                   <div class="font-mono text-base font-extrabold text-[var(--text-primary)]">
@@ -199,16 +199,16 @@ const uxModules = [
             <!-- Visual Design System Specimen Strip -->
             <div class="border border-[var(--line-subtle)] bg-[var(--bg-elevated)] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div class="space-y-1">
-                <div class="font-mono text-[10px] font-bold uppercase tracking-widest text-[var(--accent)]">
+                <div class="font-mono text-[12px] font-bold uppercase tracking-widest text-[var(--accent)]">
                   {isVi ? "TIÊU CHUẨN CHẾ TÁC GIAO DIỆN" : "INTERFACE ENGINEERING SPECIMEN"}
                 </div>
-                <div class="text-xs sm:text-sm font-medium text-[var(--text-primary)]">
+                <div class="text-sm sm:text-base font-medium text-[var(--text-primary)]">
                   {isVi
                     ? "Khung viền 0px sắc nét • Lưới 12 cột Swiss Editorial • Tương phản đa tầng"
                     : "0px Sharp Architectural Borders • 12-Column Swiss Grid • Multi-Surface Depth"}
                 </div>
               </div>
-              <div class="flex items-center gap-2 font-mono text-[11px]">
+              <div class="flex items-center gap-2 font-mono text-[13px]">
                 <span class="px-2.5 py-1 bg-[#143a8a] text-white keep-white font-bold">AA+</span>
                 <span class="px-2.5 py-1 bg-[#d9532f] text-white keep-white font-bold">60FPS</span>
                 <span class="px-2.5 py-1 border border-[var(--line-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)] font-bold">0px RADIUS</span>

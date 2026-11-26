@@ -28,7 +28,7 @@ const isVi = lang === "vi";
     <!-- Section Header -->
     <div class="reveal-on-scroll flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/[0.14] pb-8">
       <div class="space-y-3">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
           03 // {isVi ? "NGHIÊN CỨU KHOA HỌC & CÔNG BỐ QUỐC GIA" : "APPLIED AI, OPTIMIZATION & DATA MINING RESEARCH"}
         </div>
         <h2 class="display-section-title uppercase">
@@ -36,17 +36,17 @@ const isVi = lang === "vi";
         </h2>
       </div>
       <div class="max-w-xl space-y-3">
-        <p class="text-sm text-zinc-300 leading-relaxed">
+        <p class="text-base text-zinc-300 leading-relaxed">
           {isVi
             ? "Bên cạnh kỹ năng phát triển phần mềm Full-Stack, các công trình nghiên cứu tại Hội nghị Quốc gia FAIR XIX (2026) và Giải thưởng NCKH tại HUIT (2025 & 2026) minh chứng tư duy giải thuật, tối ưu hóa tổ hợp và xử lý dữ liệu lớn."
             : "Complementing hands-on Full-Stack software engineering, these peer-reviewed papers at FAIR XIX (2026) and HUIT Research Awards (2025 & 2026) demonstrate strong algorithmic problem-solving, combinatorial optimization, and data mining foundations."}
         </p>
         <a
           href={getRelativeLocaleUrl(lang, "/research")}
-          class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
+          class="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
         >
           <span>{isVi ? "Xem chi tiết toàn bộ đề tài nghiên cứu & giấy chứng nhận" : "Explore All Research Projects & Certificates"}</span>
-          <span>→</span>
+          <span></span>
         </a>
       </div>
     </div>
@@ -55,13 +55,13 @@ const isVi = lang === "vi";
     <div class="reveal-on-scroll grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/[0.14] bg-[#0a0e16]/90">
       {researchDomains.map((d) => (
         <div class="border-r border-b border-white/[0.14] p-6 space-y-3">
-          <div class="font-mono text-xs font-bold text-[#4d8dff] uppercase tracking-wider">
+          <div class="font-mono text-sm font-bold text-[#4d8dff] uppercase tracking-wider">
             {d.index} // DOMAIN
           </div>
           <h3 class="text-base font-extrabold text-white uppercase tracking-tight">
             {isVi ? d.titleVi : d.titleEn}
           </h3>
-          <p class="text-xs text-zinc-400 leading-relaxed">
+          <p class="text-sm text-zinc-400 leading-relaxed">
             {isVi ? d.summaryVi : d.summaryEn}
           </p>
         </div>
@@ -73,16 +73,16 @@ const isVi = lang === "vi";
       {researchEntries.filter((r) => r.featuredOnHome).map((item, idx) => (
         <article class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start hover:bg-white/[0.02] transition-colors">
           <!-- Left Metadata -->
-          <div class="lg:col-span-3 space-y-2 font-mono text-xs">
+          <div class="lg:col-span-3 space-y-2 font-mono text-sm">
             <div class="flex items-center gap-2">
               <span class="text-[#4d8dff] font-bold">R-0{idx + 1}</span>
               <span class="text-zinc-600">//</span>
               <span class="text-white font-semibold">{item.date}</span>
             </div>
-            <div class="inline-block border border-emerald-500/35 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-bold text-emerald-300 uppercase">
+            <div class="inline-block border border-emerald-500/35 bg-emerald-500/10 px-2.5 py-1 text-[13px] font-bold text-emerald-300 uppercase">
               {isVi ? item.statusBadgeVi : item.statusBadgeEn}
             </div>
-            <p class="text-[11px] text-zinc-400 pt-1 leading-relaxed font-sans">
+            <p class="text-[13px] text-zinc-400 pt-1 leading-relaxed font-sans">
               {isVi ? item.venueVi : item.venueEn}
             </p>
           </div>
@@ -92,10 +92,10 @@ const isVi = lang === "vi";
             <h3 class="text-lg sm:text-xl font-extrabold text-white tracking-tight leading-snug">
               {isVi ? item.titleVi : item.titleEn}
             </h3>
-            <p class="font-mono text-xs text-zinc-400">
+            <p class="font-mono text-sm text-zinc-400">
               {isVi ? item.roleVi : item.roleEn} • {item.authors.join(", ")}
             </p>
-            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed">
               {isVi ? item.methodologyVi : item.methodologyEn}
             </p>
             <div class="flex flex-wrap gap-1.5 pt-1">
@@ -121,9 +121,9 @@ const isVi = lang === "vi";
                   class="h-32 w-full object-cover object-center opacity-85 group-hover/cert:opacity-100 group-hover/cert:scale-105 transition-all"
                   loading="lazy"
                 />
-                <div class="border-t border-white/15 bg-[#07090e]/95 px-3 py-1.5 flex items-center justify-between font-mono text-[10px] text-zinc-300 uppercase">
+                <div class="border-t border-white/15 bg-[#07090e]/95 px-3 py-1.5 flex items-center justify-between font-mono text-[12px] text-zinc-300 uppercase">
                   <span>{isVi ? "Xem Minh Chứng" : "Inspect Certificate"}</span>
-                  <span class="text-[#4d8dff]">↗</span>
+                  <span class="text-[#4d8dff]"></span>
                 </div>
               </button>
             )}

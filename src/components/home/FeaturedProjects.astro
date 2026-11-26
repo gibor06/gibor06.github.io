@@ -18,7 +18,7 @@ const secondaryProjects = getSecondaryProjects();
     <!-- Section Header -->
     <div class="reveal-on-scroll flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/[0.14] pb-8">
       <div class="space-y-3">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
           01 // {isVi ? "DỰ ÁN PHẦN MỀM TRỌNG ĐIỂM" : "FEATURED FULL-STACK & SOFTWARE SYSTEMS"}
         </div>
         <h2 class="display-section-title uppercase">
@@ -26,17 +26,17 @@ const secondaryProjects = getSecondaryProjects();
         </h2>
       </div>
       <div class="max-w-xl space-y-3">
-        <p class="text-sm text-zinc-300 leading-relaxed">
+        <p class="text-base text-zinc-300 leading-relaxed">
           {isVi
             ? "Ba hệ thống phần mềm chủ lực minh chứng năng lực xây dựng ứng dụng từ Cơ sở dữ liệu SQL Server, Backend C# / ASP.NET Core 8.0 MVC & Web API, ứng dụng Desktop WPF MVVM cho đến giao diện Web đa thiết bị và tích hợp cổng thanh toán thực tế."
             : "Three primary software systems demonstrating end-to-end execution across SQL Server database design, C# / ASP.NET Core 8.0 MVC & Web API backends, WPF MVVM desktop POS clients, and responsive web interfaces with live payment integration."}
         </p>
         <a
           href={getRelativeLocaleUrl(lang, "/work")}
-          class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
+          class="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
         >
           <span>{isVi ? "Xem toàn bộ danh mục dự án (5 hệ thống)" : "View Full Project Archive (5 Systems)"}</span>
-          <span>→</span>
+          <span></span>
         </a>
       </div>
     </div>
@@ -71,13 +71,13 @@ const secondaryProjects = getSecondaryProjects();
             </div>
 
             <!-- Top Structural Metadata Bar -->
-            <div class="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.14] bg-[#07090e]/90 px-6 py-3.5 font-mono text-xs">
+            <div class="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.14] bg-[#07090e]/90 px-6 py-3.5 font-mono text-sm">
               <div class="flex flex-wrap items-center gap-3">
                 <span class="text-[#4d8dff] font-bold">0{index + 1} // CASE STUDY</span>
                 <span class="text-zinc-600">|</span>
                 <span class="text-white font-semibold uppercase tracking-wider">{category}</span>
               </div>
-              <div class="flex flex-wrap items-center gap-4 text-[11px] text-zinc-400 uppercase tracking-wider">
+              <div class="flex flex-wrap items-center gap-4 text-[13px] text-zinc-400 uppercase tracking-wider">
                 <span>{isVi ? project.timelineVi : project.timelineEn}</span>
                 <span class="text-zinc-600">•</span>
                 <span class="text-zinc-200">{role}</span>
@@ -95,24 +95,24 @@ const secondaryProjects = getSecondaryProjects();
                         {title}
                       </a>
                     </h3>
-                    <p class="font-mono text-xs sm:text-sm text-[#4d8dff]">
+                    <p class="font-mono text-sm sm:text-base text-[#4d8dff]">
                       {subtitle}
                     </p>
                   </div>
 
-                  <p class="text-sm sm:text-base text-zinc-200 leading-relaxed">
+                  <p class="text-base sm:text-base text-zinc-200 leading-relaxed">
                     {summary}
                   </p>
 
                   <!-- Verified Personal Contribution Highlights -->
                   <div class="border border-white/[0.12] bg-[#07090e]/85 p-5 space-y-3">
-                    <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider">
+                    <div class="flex items-center justify-between font-mono text-[13px] uppercase tracking-wider">
                       <span class="text-[#4d8dff] font-bold">
                         {isVi ? "ĐÓNG GÓP KỸ THUẬT TRỰC TIẾP" : "DIRECT ENGINEERING CONTRIBUTIONS"}
                       </span>
                       <span class="text-zinc-400">{team}</span>
                     </div>
-                    <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+                    <ul class="space-y-2 text-sm sm:text-base text-zinc-300">
                       {contributions.map((item) => (
                         <li class="flex items-start gap-2.5">
                           <span class="font-mono text-[#4d8dff] mt-0.5">▪</span>
@@ -134,7 +134,7 @@ const secondaryProjects = getSecondaryProjects();
                 <div class="pt-6 border-t border-white/[0.14] flex flex-wrap items-center justify-between gap-4">
                   <a href={detailUrl} class="swiss-btn-primary">
                     <span>{isVi ? "Đọc Case Study Chi Tiết" : "Read Full Engineering Case Study"}</span>
-                    <span>→</span>
+                    <span></span>
                   </a>
 
                   <div class="flex flex-wrap items-center gap-3">
@@ -146,7 +146,7 @@ const secondaryProjects = getSecondaryProjects();
                         class="swiss-btn-secondary !px-4 !py-2.5 border-emerald-500/40 text-emerald-300 hover:text-white"
                       >
                         <span class="inline-block h-2 w-2 bg-emerald-400"></span>
-                        <span>{isVi ? "Bản Demo Thực Tế ↗" : "Live Demo ↗"}</span>
+                        <span>{isVi ? "Bản Demo Thực Tế " : "Live Demo "}</span>
                       </a>
                     )}
                     <a
@@ -155,7 +155,7 @@ const secondaryProjects = getSecondaryProjects();
                       rel="noreferrer"
                       class="swiss-btn-secondary !px-4 !py-2.5"
                     >
-                      <span>{isVi ? "Mã Nguồn GitHub ↗" : "GitHub Repo ↗"}</span>
+                      <span>{isVi ? "Mã Nguồn GitHub " : "GitHub Repo "}</span>
                     </a>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ const secondaryProjects = getSecondaryProjects();
               <div class="lg:col-span-5 flex flex-col justify-between bg-[#07090e]/75 border-t lg:border-t-0 border-white/[0.14]">
                 <!-- Interactive Visual Preview -->
                 <div class="p-6 sm:p-8 space-y-4">
-                  <div class="flex items-center justify-between font-mono text-[11px] text-zinc-400 uppercase tracking-wider">
+                  <div class="flex items-center justify-between font-mono text-[13px] text-zinc-400 uppercase tracking-wider">
                     <span>{isVi ? "GIAO DIỆN & KIẾN TRÚC THỰC TẾ" : "SYSTEM INTERFACE & ARCHITECTURE"}</span>
                     <button
                       type="button"
@@ -174,7 +174,7 @@ const secondaryProjects = getSecondaryProjects();
                       data-caption={`${title} — ${subtitle}`}
                       class="text-[#4d8dff] hover:text-white uppercase tracking-wider cursor-pointer"
                     >
-                      {isVi ? "[Phóng to ↗]" : "[Inspect Full Image ↗]"}
+                      {isVi ? "[Phóng to ]" : "[Inspect Full Image ]"}
                     </button>
                   </div>
 
@@ -217,10 +217,10 @@ const secondaryProjects = getSecondaryProjects();
                 <div class="grid grid-cols-2 border-t border-white/[0.14] divide-x divide-y divide-white/[0.14] bg-[#07090e]">
                   {project.verifiedHighlights.map((m) => (
                     <div class="p-4 sm:p-5">
-                      <div class="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                      <div class="font-mono text-[12px] uppercase tracking-widest text-zinc-500">
                         {isVi ? m.labelVi : m.labelEn}
                       </div>
-                      <div class="mt-1 font-mono text-sm sm:text-base font-bold text-white">
+                      <div class="mt-1 font-mono text-base sm:text-base font-bold text-white">
                         {m.value}
                       </div>
                     </div>
@@ -237,14 +237,14 @@ const secondaryProjects = getSecondaryProjects();
     <div class="reveal-on-scroll pt-8 space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.14] pb-4">
         <div>
-          <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-zinc-400">
+          <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-zinc-400">
             01.B // {isVi ? "DỰ ÁN NỀN TẢNG & CẤU TRÚC DỮ LIỆU" : "FOUNDATIONAL SYSTEMS & DATA STRUCTURES"}
           </div>
           <h3 class="text-xl sm:text-2xl font-extrabold text-white uppercase mt-1">
             {isVi ? "Cấu Trúc Dữ Liệu C/C++ & Nền Tảng Web" : "Core C/C++ Algorithms & Early Web Engineering"}
           </h3>
         </div>
-        <span class="font-mono text-xs text-zinc-500 uppercase">
+        <span class="font-mono text-sm text-zinc-500 uppercase">
           {isVi ? "Đồ án học thuật tại HUIT" : "Verified HUIT Coursework Projects"}
         </span>
       </div>
@@ -259,7 +259,7 @@ const secondaryProjects = getSecondaryProjects();
           return (
             <article class="border-r border-b border-white/[0.14] bg-[#0a0e16]/90 p-6 sm:p-8 flex flex-col justify-between gap-6 hover:bg-white/[0.02] transition-colors">
               <div class="space-y-4">
-                <div class="flex items-center justify-between font-mono text-xs text-zinc-400">
+                <div class="flex items-center justify-between font-mono text-sm text-zinc-400">
                   <span class="text-[#4d8dff] font-bold">0{idx + 4} // {project.year}</span>
                   <span class="uppercase">{isVi ? project.categoryVi : project.category}</span>
                 </div>
@@ -269,9 +269,9 @@ const secondaryProjects = getSecondaryProjects();
                       {title}
                     </a>
                   </h4>
-                  <p class="font-mono text-xs text-zinc-400">{subtitle}</p>
+                  <p class="font-mono text-sm text-zinc-400">{subtitle}</p>
                 </div>
-                <p class="text-sm text-zinc-300 leading-relaxed">
+                <p class="text-base text-zinc-300 leading-relaxed">
                   {summary}
                 </p>
                 <div class="flex flex-wrap gap-1.5 pt-1">
@@ -281,9 +281,9 @@ const secondaryProjects = getSecondaryProjects();
                 </div>
               </div>
 
-              <div class="pt-4 border-t border-white/[0.12] flex items-center justify-between font-mono text-xs">
+              <div class="pt-4 border-t border-white/[0.12] flex items-center justify-between font-mono text-sm">
                 <a href={detailUrl} class="text-white hover:text-[#4d8dff] font-bold uppercase tracking-wider">
-                  {isVi ? "Xem Chi Tiết →" : "Inspect Case Study →"}
+                  {isVi ? "Xem Chi Tiết " : "Inspect Case Study "}
                 </a>
                 <a
                   href={project.repoUrl}
@@ -291,7 +291,7 @@ const secondaryProjects = getSecondaryProjects();
                   rel="noreferrer"
                   class="text-zinc-400 hover:text-white uppercase tracking-wider"
                 >
-                  GitHub ↗
+                  GitHub
                 </a>
               </div>
             </article>

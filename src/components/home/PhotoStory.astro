@@ -1,0 +1,27 @@
+---
+import { withBase } from '@i18n/utils';
+interface Props { lang: 'en' | 'vi' }
+const { lang } = Astro.props;
+const vi = lang === 'vi';
+const slides = [
+  { file: 'fair-presentation.jpg', title: vi ? 'Báo cáo nghiên cứu SFT' : 'Presenting SFT research', subtitle: 'FAIR XIX · HUIT · 2026', alt: vi ? 'Trần Gia Bảo trình bày nghiên cứu SFT tại FAIR 2026' : 'Trần Gia Bảo presenting SFT research at FAIR 2026', position: '40% 56%' },
+  { file: 'faculty-awards-2025.jpg', title: vi ? 'NCKH cấp khoa' : 'Faculty research awards', subtitle: vi ? 'Giải Nhì & Giải Ba · HUIT · 2025' : 'Second & Third prizes · HUIT · 2025', alt: vi ? 'Lễ trao giải nghiên cứu khoa học sinh viên tại HUIT năm 2025' : 'Student research award ceremony at HUIT in 2025', position: 'center 65%' },
+  { file: 'university-awards-2025.jpg', title: vi ? 'NCKH cấp trường' : 'University research awards', subtitle: vi ? 'Giải Khuyến khích · HUIT · 2025' : 'Consolation prize · HUIT · 2025', alt: vi ? 'Sinh viên nhận giải Khuyến khích nghiên cứu khoa học cấp trường HUIT năm 2025' : 'Students receiving university research consolation prizes at HUIT in 2025', position: 'center 55%' },
+
+  { file: 'fair-ai-session.webp', title: vi ? 'Tiểu ban Trí tuệ nhân tạo' : 'Artificial Intelligence session', subtitle: 'FAIR XIX · 2026', alt: vi ? 'Ảnh tập thể Tiểu ban 1 Trí tuệ nhân tạo và ứng dụng tại FAIR XIX 2026' : 'Group photo of the Artificial Intelligence and Applications session at FAIR XIX 2026', position: 'center 65%' },
+  { file: 'fair-certificates.webp', title: vi ? 'Nhận chứng nhận báo cáo' : 'Presentation certificates', subtitle: 'FAIR XIX · 2026', alt: vi ? 'Các tác giả nhận chứng nhận bài báo được trình bày tại FAIR XIX 2026' : 'Authors receiving presentation certificates at FAIR XIX 2026', position: 'center 65%' },
+  { file: 'fair-data-science.webp', title: vi ? 'Tiểu ban Khoa học dữ liệu' : 'Data Science session', subtitle: 'FAIR XIX · 2026', alt: vi ? 'Ảnh tập thể Tiểu ban 3 Khoa học dữ liệu tại FAIR XIX 2026' : 'Group photo of the Data Science session at FAIR XIX 2026', position: 'center 65%' },
+  { file: 'fair-gala.webp', title: vi ? 'Gala Dinner FAIR XIX' : 'FAIR XIX Gala Dinner', subtitle: 'HUIT · 2026', alt: vi ? 'Ảnh lưu niệm tại Gala Dinner Hội nghị FAIR XIX 2026' : 'Group photo at the FAIR XIX 2026 Gala Dinner', position: 'center 60%' },
+];
+---
+<section class="photo-story" aria-roledescription={vi ? 'Trình chiếu' : 'Carousel'} aria-label={vi ? 'Hành trình nghiên cứu qua ảnh' : 'Research journey in pictures'}>
+  <div class="story-frames">
+    {slides.map((slide, i) => <div class:list={['story-slide', { 'is-active': i === 0 }]} aria-hidden={i !== 0} data-slide={i}>
+      <img src={withBase(`/assets/img/story/${slide.file}`)} alt={slide.alt} width={i === 0 ? 1920 : slide.file.endsWith('.webp') ? 1600 : 2048} height={i === 0 ? 2560 : slide.file.endsWith('.webp') ? 1067 : 1536} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'auto'} style={`object-position:${slide.position}`} />
+      <div class="story-shade"></div>
+      <div class="story-caption"><span class="story-category">{slide.subtitle}</span><h2>{slide.title}</h2></div>
+    </div>)}
+  </div>
+  <div class="story-top"><span class="story-badge"><i></i>{vi ? 'NGHIÊN CỨU & HỘI NGHỊ' : 'RESEARCH & CONFERENCES'}</span><span class="story-year">2025 — 2026</span></div>
+  <div class="story-controls"><div class="story-dots" role="group" aria-label={vi ? 'Chọn ảnh' : 'Select photo'}>{slides.map((slide,i) => <button class:list={['story-dot', { 'is-active': i === 0 }]} data-goto={i} aria-label={slide.title} aria-pressed={i === 0}><span></span></button>)}</div><div class="story-control-right"><span class="story-counter" aria-hidden="true">01 / {String(slides.length).padStart(2, '0')}</span><button class="story-pause" aria-label={vi ? 'Tạm dừng trình chiếu' : 'Pause slideshow'} aria-pressed="false" data-play-label={vi ? 'Tiếp tục trình chiếu' : 'Play slideshow'} data-pause-label={vi ? 'Tạm dừng trình chiếu' : 'Pause slideshow'}><span aria-hidden="true">Ⅱ</span></button></div></div>
+</section>

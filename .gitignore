@@ -60,3 +60,5 @@ target/
 
 # Agents
 .agents
+# Local portfolio browser verification
+/tmp/qa/

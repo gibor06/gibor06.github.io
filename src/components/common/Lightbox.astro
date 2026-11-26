@@ -19,7 +19,7 @@ const { lang = "en" } = Astro.props;
     class="relative max-w-6xl w-full border-2 border-[var(--line-strong)] bg-[var(--bg-elevated)] shadow-[12px_12px_0px_#d9532f] flex flex-col max-h-[92vh]"
   >
     <!-- Top Editorial Control Bar -->
-    <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-[var(--line-strong)] px-4 py-3 bg-[#143a8a] text-white keep-white font-mono text-xs shrink-0">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-[var(--line-strong)] px-4 py-3 bg-[#143a8a] text-white keep-white font-mono text-sm shrink-0">
       <div class="flex items-center gap-2.5 min-w-0 flex-1 pr-2">
         <span class="inline-block h-2.5 w-2.5 bg-[#d9532f] shrink-0"></span>
         <span id="lightboxCounter" class="font-bold uppercase tracking-[0.18em] text-[#ffd4c8] keep-white shrink-0">
@@ -43,7 +43,7 @@ const { lang = "en" } = Astro.props;
         <button
           type="button"
           id="lightboxZoomResetBtn"
-          class="px-2.5 py-1 border border-white/30 bg-white/10 text-white keep-white text-[10px] font-bold hover:bg-white/25 transition-colors cursor-pointer min-w-[52px]"
+          class="px-2.5 py-1 border border-white/30 bg-white/10 text-white keep-white text-[12px] font-bold hover:bg-white/25 transition-colors cursor-pointer min-w-[52px]"
           title={lang === "vi" ? "Đặt lại kích thước (100%)" : "Reset Zoom (100%)"}
         >
           100%
@@ -62,15 +62,15 @@ const { lang = "en" } = Astro.props;
           href="#"
           target="_blank"
           rel="noreferrer"
-          class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 border border-white/30 bg-white/10 text-white keep-white text-[10px] font-bold uppercase tracking-wider hover:bg-white/25 transition-colors"
+          class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 border border-white/30 bg-white/10 text-white keep-white text-[12px] font-bold uppercase tracking-wider hover:bg-white/25 transition-colors"
         >
           <span>{lang === "vi" ? "MỞ ẢNH GỐC" : "ORIGINAL"}</span>
-          <span>↗</span>
+
         </a>
         <button
           type="button"
           id="lightboxCloseBtn"
-          class="inline-flex items-center gap-1.5 bg-[#d9532f] px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-widest text-white keep-white hover:bg-[#b83f1d] transition-colors cursor-pointer ml-1"
+          class="inline-flex items-center gap-1.5 bg-[#d9532f] px-3 py-1 text-[13px] font-mono font-bold uppercase tracking-widest text-white keep-white hover:bg-[#b83f1d] transition-colors cursor-pointer ml-1"
           aria-label={lang === "vi" ? "Đóng cửa sổ phóng to" : "Close image preview"}
         >
           <span>{lang === "vi" ? "ĐÓNG [ESC]" : "CLOSE [ESC]"}</span>
@@ -91,7 +91,7 @@ const { lang = "en" } = Astro.props;
         class="fixed sm:absolute left-4 sm:left-5 z-20 border-2 border-[var(--line-strong)] bg-[var(--bg-elevated)] hover:bg-[#143a8a] hover:text-white text-[var(--text)] w-10 h-10 flex items-center justify-center font-mono text-base font-bold shadow-[4px_4px_0px_var(--shadow-color)] transition-colors cursor-pointer"
         aria-label={lang === "vi" ? "Ảnh trước" : "Previous image"}
       >
-        ←
+
       </button>
 
       <!-- Enlarged Image -->
@@ -109,16 +109,16 @@ const { lang = "en" } = Astro.props;
         class="fixed sm:absolute right-4 sm:right-5 z-20 border-2 border-[var(--line-strong)] bg-[var(--bg-elevated)] hover:bg-[#143a8a] hover:text-white text-[var(--text)] w-10 h-10 flex items-center justify-center font-mono text-base font-bold shadow-[4px_4px_0px_var(--shadow-color)] transition-colors cursor-pointer"
         aria-label={lang === "vi" ? "Ảnh tiếp theo" : "Next image"}
       >
-        →
+
       </button>
     </div>
 
     <!-- Bottom Hint Bar -->
-    <div class="border-t border-[var(--line)] px-4 py-2 bg-[var(--bg-panel)] flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)] shrink-0">
+    <div class="border-t border-[var(--line)] px-4 py-2 bg-[var(--bg-panel)] flex items-center justify-between font-mono text-[12px] uppercase tracking-[0.18em] text-[var(--text-muted)] shrink-0">
       <span>
         {lang === "vi"
-          ? "MẸO: NHẤP VÀO ẢNH HOẶC LĂN CHUỘT ĐỂ PHÓNG TO (100% ↔ 220%) • DÙNG PHÍM ← / → ĐỂ CHUYỂN ẢNH"
-          : "TIP: CLICK IMAGE OR SCROLL TO ZOOM (100% ↔ 220%) • USE ← / → ARROWS TO NAVIGATE"}
+          ? "MẸO: NHẤP VÀO ẢNH HOẶC LĂN CHUỘT ĐỂ PHÓNG TO (100% ↔ 220%) • DÙNG PHÍM  /  ĐỂ CHUYỂN ẢNH"
+          : "TIP: CLICK IMAGE OR SCROLL TO ZOOM (100% ↔ 220%) • USE  /  ARROWS TO NAVIGATE"}
       </span>
       <span class="font-bold text-[var(--accent-secondary)]">GIBOR06 // EVIDENCE VIEWER</span>
     </div>

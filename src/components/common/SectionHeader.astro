@@ -10,7 +10,7 @@ const { kicker, title, description, align = "left" } = Astro.props;
 ---
 
 <div class={`mb-12 ${align === "center" ? "text-center max-w-2xl mx-auto" : "max-w-3xl"}`}>
-  <p class="font-mono text-xs font-semibold tracking-wider text-blue-400 uppercase mb-2">
+  <p class="font-mono text-sm font-semibold tracking-wider text-blue-400 uppercase mb-2">
     {kicker}
   </p>
   <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">

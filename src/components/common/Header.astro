@@ -23,7 +23,7 @@ const navItems = [
 
 <header class="sticky top-0 z-50 border-b border-[var(--line-strong)] bg-[var(--bg)]/95 backdrop-blur-md transition-colors duration-300 no-print">
   <!-- Top Print Masthead Bar (Required: "GIBOR06 STUDIO" | "DIGITAL PRODUCT DESIGN • FULL-STACK ARCHITECTURE • AI" | "SAIGON, VIETNAM" | "FOLIO // 2026") -->
-  <div class="border-b border-[var(--line)] bg-[var(--bg-panel)] font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em]">
+  <div class="border-b border-[var(--line)] bg-[var(--bg-panel)] font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.2em]">
     <div class="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-12">
       <div class="col-span-1 lg:col-span-3 px-4 sm:px-6 py-2 bg-[#143a8a] text-white keep-white font-bold flex items-center gap-2 border-r border-[var(--line)]">
         <span class="inline-block h-2 w-2 bg-[#d9532f]"></span>
@@ -53,7 +53,7 @@ const navItems = [
         <span class="font-editorial text-xl sm:text-2xl font-bold tracking-tight text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
           Trần Gia Bảo
         </span>
-        <span class="hidden sm:inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+        <span class="hidden sm:inline-block font-mono text-[12px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
           // GIBOR06
         </span>
       </a>
@@ -63,7 +63,7 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="h-full px-4 flex items-center gap-1.5 border-r border-[var(--line)] font-mono text-[11px] uppercase tracking-[0.15em] text-[var(--text-secondary)] hover:text-[var(--text)] hover:bg-[var(--bg-panel)] transition-colors"
+            class="h-full px-4 flex items-center gap-1.5 border-r border-[var(--line)] font-mono text-[13px] uppercase tracking-[0.15em] text-[var(--text-secondary)] hover:text-[var(--text)] hover:bg-[var(--bg-panel)] transition-colors"
           >
             <span class="text-[var(--accent-secondary)] font-bold">{item.index} //</span>
             <span class="font-semibold">{item.label}</span>
@@ -75,7 +75,7 @@ const navItems = [
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- 4-Theme Switcher: Alabaster, Cobalt, Terracotta, Travertine -->
         <div
-          class="hidden lg:flex items-center border border-[var(--line-strong)] bg-[var(--bg-elevated)] p-0.5 font-mono text-[10px]"
+          class="hidden lg:flex items-center border border-[var(--line-strong)] bg-[var(--bg-elevated)] p-0.5 font-mono text-[12px]"
           role="group"
           aria-label={lang === "vi" ? "Chọn chủ đề màu sắc" : "Select color theme"}
         >
@@ -125,7 +125,7 @@ const navItems = [
         <a
           href={alternateUrl}
           data-set-lang={targetLang}
-          class="inline-flex items-center gap-1.5 border border-[var(--line-strong)] bg-[var(--bg-elevated)] px-3 py-1.5 font-mono text-[11px] font-bold text-[var(--text)] hover:bg-[var(--accent)] hover:text-white transition-colors uppercase tracking-wider"
+          class="inline-flex items-center gap-1.5 border border-[var(--line-strong)] bg-[var(--bg-elevated)] px-3 py-1.5 font-mono text-[13px] font-bold text-[var(--text)] hover:bg-[var(--accent)] hover:text-white transition-colors uppercase tracking-wider"
           aria-label={lang === "en" ? "Chuyển sang tiếng Việt (VI)" : "Switch to English (EN)"}
         >
           <span class={lang === "en" ? "text-[var(--accent-secondary)] underline" : "opacity-60"}>EN</span>
@@ -156,14 +156,14 @@ const navItems = [
     class="hidden xl:hidden border-t border-[var(--line-strong)] bg-[var(--bg-elevated)]"
     aria-label="Mobile Navigation"
   >
-    <div class="mx-auto max-w-7xl px-4 py-4 space-y-3 font-mono text-xs">
+    <div class="mx-auto max-w-7xl px-4 py-4 space-y-3 font-mono text-sm">
       <!-- Mobile Masthead Sub-line -->
-      <div class="pb-2 border-b border-[var(--line)] text-[10px] uppercase tracking-[0.18em] text-[var(--text-muted)]">
+      <div class="pb-2 border-b border-[var(--line)] text-[12px] uppercase tracking-[0.18em] text-[var(--text-muted)]">
         DIGITAL PRODUCT DESIGN • FULL-STACK ARCHITECTURE • AI — SAIGON, VIETNAM
       </div>
 
       <!-- Mobile 4-Theme Switcher -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pb-3 border-b border-[var(--line)] text-[10px]">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pb-3 border-b border-[var(--line)] text-[12px]">
         <button type="button" data-set-theme="alabaster" class="py-2 px-2 font-bold uppercase tracking-wider bg-[#f6f3ec] text-[#0f1e36] border border-[#0f1e36]/30">01. Alabaster</button>
         <button type="button" data-set-theme="cobalt" class="py-2 px-2 font-bold uppercase tracking-wider bg-[#102a63] text-white keep-white">02. Cobalt</button>
         <button type="button" data-set-theme="terracotta" class="py-2 px-2 font-bold uppercase tracking-wider bg-[#d9532f] text-white keep-white">03. Terracotta</button>
@@ -177,7 +177,7 @@ const navItems = [
             class="mobile-nav-link flex items-center justify-between px-3 py-2.5 border border-[var(--line)] text-[var(--text)] hover:bg-[var(--bg-panel)] uppercase tracking-wider"
           >
             <span><strong class="text-[var(--accent-secondary)]">{item.index} //</strong> {item.label}</span>
-            <span>→</span>
+            <span></span>
           </a>
         ))}
       </div>

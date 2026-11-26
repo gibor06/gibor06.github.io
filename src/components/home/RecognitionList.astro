@@ -15,7 +15,7 @@ const isVi = lang === "vi";
     <!-- Section Header -->
     <div class="reveal-on-scroll flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/[0.14] pb-8">
       <div class="space-y-3">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
           04 // {isVi ? "GIẢI THƯỞNG & HỌC BỔNG ĐÃ XÁC THỰC" : "VERIFIED HONOURS & ACADEMIC DISTINCTIONS"}
         </div>
         <h2 class="display-section-title uppercase">
@@ -24,10 +24,10 @@ const isVi = lang === "vi";
       </div>
       <a
         href={getRelativeLocaleUrl(lang, "/credentials")}
-        class="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
+        class="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-[#4d8dff] hover:text-white transition-colors"
       >
         <span>{isVi ? "Xem toàn bộ hồ sơ chứng chỉ & giải thưởng" : "View Full Credentials Archive"}</span>
-        <span>→</span>
+        <span></span>
       </a>
     </div>
 
@@ -56,29 +56,29 @@ const isVi = lang === "vi";
                     class="h-full w-full object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
                   />
-                  <div class="absolute top-3 left-3 border border-white/20 bg-[#07090e]/90 px-2.5 py-1 font-mono text-[10px] font-bold text-[#4d8dff] uppercase tracking-wider">
+                  <div class="absolute top-3 left-3 border border-white/20 bg-[#07090e]/90 px-2.5 py-1 font-mono text-[12px] font-bold text-[#4d8dff] uppercase tracking-wider">
                     0{idx + 1} // {item.date}
                   </div>
-                  <div class="absolute bottom-3 right-3 border border-white/25 bg-[#07090e]/90 px-2.5 py-1 font-mono text-[10px] text-white uppercase tracking-wider">
-                    {isVi ? "Xem ảnh ↗" : "Inspect ↗"}
+                  <div class="absolute bottom-3 right-3 border border-white/25 bg-[#07090e]/90 px-2.5 py-1 font-mono text-[12px] text-white uppercase tracking-wider">
+                    {isVi ? "Xem ảnh " : "Inspect "}
                   </div>
                 </button>
               )}
 
               <div class="p-6 space-y-3">
-                <div class="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">
+                <div class="font-mono text-[13px] text-zinc-400 uppercase tracking-wider">
                   {org}
                 </div>
                 <h3 class="text-lg font-extrabold text-white leading-snug">
                   {title}
                 </h3>
-                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                <p class="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   {desc}
                 </p>
               </div>
             </div>
 
-            <div class="px-6 py-3.5 border-t border-white/[0.10] bg-[#07090e]/60 flex items-center justify-between font-mono text-[11px]">
+            <div class="px-6 py-3.5 border-t border-white/[0.10] bg-[#07090e]/60 flex items-center justify-between font-mono text-[13px]">
               <span class="text-emerald-400 uppercase tracking-wider">
                 {isVi ? item.scopeVi : item.scopeEn}
               </span>
@@ -90,7 +90,7 @@ const isVi = lang === "vi";
                   data-caption={`${title} — ${org} (${item.date})`}
                   class="text-zinc-300 hover:text-[#4d8dff] uppercase tracking-wider cursor-pointer"
                 >
-                  {isVi ? "Phóng to giấy khen →" : "Open Certificate →"}
+                  {isVi ? "Phóng to giấy khen " : "Open Certificate "}
                 </button>
               )}
             </div>

@@ -15,7 +15,7 @@ const isVi = lang === "vi";
     <!-- Section Header -->
     <div class="reveal-on-scroll flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/[0.14] pb-8">
       <div class="space-y-3">
-        <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
+        <div class="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#4d8dff]">
           06 // {isVi ? "NỀN TẢNG ĐÀO TẠO & ĐỊNH HƯỚNG KỸ SƯ" : "ACADEMIC FOUNDATION & CAREER DIRECTION"}
         </div>
         <h2 class="display-section-title uppercase">
@@ -24,10 +24,10 @@ const isVi = lang === "vi";
       </div>
       <div class="flex flex-wrap gap-3">
         <a href={getRelativeLocaleUrl(lang, "/about")} class="swiss-btn-secondary">
-          <span>{isVi ? "Đọc Hồ Sơ Giới Thiệu Đầy Đủ →" : "Full About & Philosophy →"}</span>
+          <span>{isVi ? "Đọc Hồ Sơ Giới Thiệu Đầy Đủ " : "Full About & Philosophy "}</span>
         </a>
         <a href={getRelativeLocaleUrl(lang, "/resume")} class="swiss-btn-primary">
-          <span>{isVi ? "Xem CV Trực Tuyến →" : "View Full Resume / CV →"}</span>
+          <span>{isVi ? "Xem CV Trực Tuyến " : "View Full Resume / CV "}</span>
         </a>
       </div>
     </div>
@@ -37,17 +37,17 @@ const isVi = lang === "vi";
       <!-- Left 5 Columns -->
       <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 lg:border-r border-white/[0.14] flex flex-col justify-between space-y-8">
         <div class="space-y-5">
-          <div class="font-mono text-xs uppercase tracking-widest text-[#4d8dff] font-bold">
+          <div class="font-mono text-sm uppercase tracking-widest text-[#4d8dff] font-bold">
             {isVi ? profile.universityVi : profile.university}
           </div>
           <h3 class="text-2xl font-extrabold text-white uppercase tracking-tight">
             {isVi ? profile.degreeVi : profile.degree}
           </h3>
-          <p class="text-sm text-zinc-300 leading-relaxed">
+          <p class="text-base text-zinc-300 leading-relaxed">
             {isVi ? profile.shortBioVi : profile.shortBio}
           </p>
 
-          <div class="border border-white/[0.12] bg-[#07090e] p-5 space-y-3 font-mono text-xs">
+          <div class="border border-white/[0.12] bg-[#07090e] p-5 space-y-3 font-mono text-sm">
             <div class="flex justify-between py-1 border-b border-white/[0.08]">
               <span class="text-zinc-500">{isVi ? "TRẠNG THÁI" : "STATUS"}</span>
               <span class="text-white font-bold">{isVi ? profile.academicYearVi : profile.academicYear}</span>
@@ -68,10 +68,10 @@ const isVi = lang === "vi";
         </div>
 
         <div class="pt-4 border-t border-white/[0.12] space-y-2">
-          <div class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">
+          <div class="font-mono text-[13px] uppercase tracking-wider text-zinc-400">
             {isVi ? "MỤC TIÊU THỰC TẬP 2026" : "2026 INTERNSHIP OBJECTIVE"}
           </div>
-          <p class="text-xs text-zinc-300 leading-relaxed">
+          <p class="text-sm text-zinc-300 leading-relaxed">
             {isVi
               ? "Mong muốn tham gia đội ngũ phát triển phần mềm ở vị trí Full-Stack Developer Intern (.NET / Web / SQL Server), đóng góp trực tiếp vào các phân hệ nghiệp vụ, API và giao diện người dùng trong môi trường Agile."
               : "Seeking a Full-Stack Developer Intern role (.NET / Web / SQL Server) to contribute directly to production business modules, RESTful APIs, and responsive client interfaces within an Agile engineering team."}
@@ -83,30 +83,30 @@ const isVi = lang === "vi";
       <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 border-t lg:border-t-0 border-white/[0.14] space-y-6">
         <div class="flex items-center justify-between border-b border-white/[0.12] pb-4">
           <div>
-            <div class="font-mono text-xs font-bold text-[#4d8dff] uppercase tracking-wider">
+            <div class="font-mono text-sm font-bold text-[#4d8dff] uppercase tracking-wider">
               {isVi ? "HỌC PHẦN CỐT LÕI TIÊU BIỂU" : "SELECTED CORE ENGINEERING COURSEWORK"}
             </div>
-            <p class="text-xs text-zinc-400 mt-1">
+            <p class="text-sm text-zinc-400 mt-1">
               {isVi
                 ? "Các học phần nền tảng về lập trình hướng đối tượng, cơ sở dữ liệu và phát triển ứng dụng .NET / Web."
                 : "Foundational software engineering, relational database, and .NET/Web development coursework."}
             </p>
           </div>
-          <span class="font-mono text-xs text-emerald-400 font-bold uppercase">HUIT FIT</span>
+          <span class="font-mono text-sm text-emerald-400 font-bold uppercase">HUIT FIT</span>
         </div>
 
         <div class="divide-y divide-white/[0.10] border border-white/[0.12] bg-[#07090e]">
           {profile.relevantCourses.map((c) => (
             <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/[0.02] transition-colors">
               <div>
-                <div class="text-sm font-bold text-white">
+                <div class="text-base font-bold text-white">
                   {isVi ? c.nameVi : c.name}
                 </div>
-                <div class="text-xs text-zinc-400 mt-0.5">
+                <div class="text-sm text-zinc-400 mt-0.5">
                   {isVi ? c.focusVi : c.focus}
                 </div>
               </div>
-              <div class="font-mono text-xs font-bold text-emerald-400 shrink-0 border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1">
+              <div class="font-mono text-sm font-bold text-emerald-400 shrink-0 border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1">
                 {c.code}
               </div>
             </div>

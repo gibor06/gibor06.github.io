@@ -17,7 +17,7 @@ const { lang = "en" } = Astro.props;
       <!-- Left 5 Columns: Declarative Prestige Statement -->
       <div class="lg:col-span-5 p-8 sm:p-10 lg:p-12 bg-[#143a8a] text-white keep-white border-b lg:border-b-0 lg:border-r border-[var(--line-strong)] flex flex-col justify-between space-y-8">
         <div class="space-y-4">
-          <div class="inline-flex items-center gap-2 bg-[#d9532f] text-white keep-white px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.22em]">
+          <div class="inline-flex items-center gap-2 bg-[#d9532f] text-white keep-white px-3 py-1 font-mono text-[12px] font-bold uppercase tracking-[0.22em]">
             <span>04 // RESEARCH & PUBLICATIONS</span>
           </div>
           <h2 class="font-editorial text-4xl sm:text-5xl font-bold text-white keep-white leading-[1.05]">
@@ -47,7 +47,7 @@ const { lang = "en" } = Astro.props;
           </svg>
         </div>
 
-        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/80 keep-white">
+        <div class="font-mono text-[12px] uppercase tracking-[0.2em] text-white/80 keep-white">
           FAIR XIX 2026 • HUIM DATA MINING • PHOBERT NLP • VISION TRANSFORMERS
         </div>
       </div>
@@ -55,7 +55,7 @@ const { lang = "en" } = Astro.props;
       <!-- Right 7 Columns: Research Philosophy & Highlights -->
       <div class="lg:col-span-7 p-8 sm:p-10 lg:p-14 flex flex-col justify-between space-y-8">
         <div class="space-y-4">
-          <div class="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--accent-secondary)] font-bold">
+          <div class="font-mono text-[13px] uppercase tracking-[0.22em] text-[var(--accent-secondary)] font-bold">
             {lang === "vi" ? "TỪ LÝ THUYẾT ĐẾN KIẾN TRÚC THỰC TIỄN" : "WHERE THEORY SHARPENS ENGINEERING"}
           </div>
           <p class="text-[var(--text-secondary)] text-base sm:text-lg leading-[1.8]">
@@ -73,7 +73,7 @@ const { lang = "en" } = Astro.props;
             return (
               <div class="p-5 border border-[var(--line-strong)] bg-[var(--bg)] flex flex-col justify-between space-y-4">
                 <div class="space-y-2">
-                  <div class="flex items-center justify-between font-mono text-[10px] font-bold uppercase tracking-[0.18em]">
+                  <div class="flex items-center justify-between font-mono text-[12px] font-bold uppercase tracking-[0.18em]">
                     <span class="bg-[#d9532f] text-white keep-white px-2 py-0.5">
                       FAIR XIX 2026 // 0{idx + 1}
                     </span>
@@ -88,7 +88,7 @@ const { lang = "en" } = Astro.props;
                   data-lightbox={withBase(paper.certificateImg)}
                   data-lightbox-alt={title}
                   data-lightbox-caption={`${title} — ${paper.venueEn}`}
-                  class="w-full py-2 px-3 border border-[var(--line-strong)] bg-[var(--bg-elevated)] font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text)] hover:bg-[#143a8a] hover:text-white transition-colors cursor-pointer flex items-center justify-between"
+                  class="w-full py-2 px-3 border border-[var(--line-strong)] bg-[var(--bg-elevated)] font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--text)] hover:bg-[#143a8a] hover:text-white transition-colors cursor-pointer flex items-center justify-between"
                 >
                   <span>{lang === "vi" ? "XEM CHỨNG NHẬN FAIR XIX" : "VIEW FAIR XIX CERTIFICATE"}</span>
                   <span>⊕</span>
@@ -102,7 +102,7 @@ const { lang = "en" } = Astro.props;
 
     <!-- Complete 7 Verified Research & Publication Dossiers -->
     <div class="space-y-6 reveal-on-scroll">
-      <div class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-secondary)]">
+      <div class="font-mono text-sm font-bold uppercase tracking-[0.22em] text-[var(--accent-secondary)]">
         {lang === "vi"
           ? "04.B // DANH MỤC 07 CÔNG TRÌNH NGHIÊN CỨU KHOA HỌC & KHOA HỌC DỮ LIỆU (2025 — 2026):"
           : "04.B // COMPLETE CATALOGUE OF 07 SCIENTIFIC RESEARCH & DATA SCIENCE WORKS (2025 — 2026):"}
@@ -120,28 +120,28 @@ const { lang = "en" } = Astro.props;
             <article class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center hover:bg-[var(--bg-panel)] transition-colors">
               <!-- Col 1: Index & Status -->
               <div class="lg:col-span-3 space-y-2">
-                <div class="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-secondary)]">
+                <div class="flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent-secondary)]">
                   <span>PAPER // 0{idx + 1}</span>
                   <span>•</span>
                   <span>{entry.date}</span>
                 </div>
-                <div class="inline-block bg-[#143a8a] text-white keep-white font-mono text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1">
+                <div class="inline-block bg-[#143a8a] text-white keep-white font-mono text-[12px] font-bold uppercase tracking-[0.15em] px-2.5 py-1">
                   {badge}
                 </div>
-                <div class="font-mono text-[11px] font-bold text-[var(--text)] pt-1">
+                <div class="font-mono text-[13px] font-bold text-[var(--text)] pt-1">
                   {role}
                 </div>
               </div>
 
               <!-- Col 2: Title, Venue & Methodology -->
               <div class="lg:col-span-6 space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                <div class="font-mono text-[12px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
                   {venue}
                 </div>
                 <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[var(--text)] leading-tight">
                   {title}
                 </h3>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+                <p class="text-base text-[var(--text-secondary)] leading-relaxed">
                   {methodology}
                 </p>
                 <div class="pt-2 flex flex-wrap gap-1.5">
@@ -168,7 +168,7 @@ const { lang = "en" } = Astro.props;
                       class="w-full h-full object-cover group-hover/cert:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div class="pt-1.5 flex items-center justify-between font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--text)]">
+                  <div class="pt-1.5 flex items-center justify-between font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--text)]">
                     <span>{lang === "vi" ? "PHÓNG TO CHỨNG NHẬN" : "INSPECT CERTIFICATE"}</span>
                     <span class="text-[var(--accent-secondary)]">⊕</span>
                   </div>
