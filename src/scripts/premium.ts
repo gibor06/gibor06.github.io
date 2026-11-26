@@ -101,7 +101,7 @@ function initMilestoneScroll() {
  };
  const update = () => {
   if (motion.matches) return;
-  const top = window.innerWidth < 700 ? 90 : 110;
+  const top = parseFloat(getComputedStyle(section.querySelector<HTMLElement>('.honours-sticky')!).top) || 85;
   const progress = Math.max(0, Math.min(1, (top - section.getBoundingClientRect().top) / Math.max(1, travel)));
   target = progress * travel;
   if (!frame) frame = requestAnimationFrame(animate);
