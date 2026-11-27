@@ -81,6 +81,7 @@ const jsonLd = {
 <meta name="author" content={profile.name} />
 <meta name="theme-color" content="#f6f3ec" />
 <meta name="robots" content="index, follow" />
+<meta name="referrer" content="no-referrer" />
 
 <link rel="canonical" href={currentUrl} />
 <link rel="alternate" hreflang="en" href={enUrl} />
@@ -115,4 +116,4 @@ const jsonLd = {
   rel="stylesheet"
 />
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />

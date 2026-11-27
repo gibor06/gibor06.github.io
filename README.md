@@ -11,7 +11,7 @@
 
 ## 1. Architecture & Tech Stack
 
-- **Framework**: [Astro 5+](https://astro.build) (Zero-JS static HTML by default, islands architecture)
+- **Framework**: [Astro 7](https://astro.build) (Zero-JS static HTML by default, islands architecture)
 - **Content Engine**: Astro Content Collections with typed Zod schemas and MDX
 - **Styling**: Tailwind CSS 4 with custom CSS design tokens & Geist typography
 - **Internationalization (i18n)**: English (Default `/portfolio/`) & Vietnamese (`/portfolio/vi/`)
@@ -72,7 +72,7 @@ portfolio/
 ## 3. Getting Started & Local Development
 
 ### Prerequisites
-- Node.js `v20+` or `v22+`
+- Node.js `v24.19.0+` (Node 24 is used in CI; see `.nvmrc`)
 - npm `v10+`
 
 ### Installation
@@ -102,6 +102,8 @@ npm run build
 # Preview production build locally
 npm run preview
 ```
+
+Security controls and all required verification commands are documented in [SECURITY.md](SECURITY.md). Production builds generate a hash-based CSP; CI checks the resulting HTML and browser interactions before deployment. DDoS protection and custom HTTP headers for `github.io` remain controlled by GitHub Pages.
 
 ---
 

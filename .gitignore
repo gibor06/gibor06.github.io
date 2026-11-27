@@ -62,6 +62,8 @@ target/
 .agents
 # Local portfolio browser verification
 /tmp/qa/
+/test-results/
+/playwright-report/
 
 # Local Knowns runtime state (project docs and tasks are tracked)
 /.knowns/history/
@@ -69,3 +71,4 @@ target/
 /.knowns/workspaces.json
 /.knowns/time.json
 /.knowns/time-entries.json
+/.knowns/agent-work.json
