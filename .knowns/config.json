@@ -1,0 +1,75 @@
+{
+  "createdAt": "2026-11-27T05:34:00.661Z",
+  "id": "GIBOR06-portfolio",
+  "name": "GIBOR06_portfolio",
+  "schemaVersion": 1,
+  "settings": {
+    "defaultPriority": "medium",
+    "gitTracking": {
+      "decisions": true,
+      "docs": true,
+      "memories": false,
+      "tasks": true,
+      "templates": true
+    },
+    "gitTrackingMode": "git-tracked",
+    "lsp": {
+      "enabled": true,
+      "languages": {
+        "javascript": {
+          "enabled": true
+        },
+        "json": {
+          "enabled": true
+        },
+        "markdown": {
+          "enabled": true
+        },
+        "scss": {
+          "enabled": true
+        },
+        "typescript": {
+          "enabled": true
+        },
+        "yaml": {
+          "enabled": true
+        }
+      }
+    },
+    "platforms": [
+      "claude-code",
+      "agents"
+    ],
+    "statusColors": {
+      "blocked": "red",
+      "done": "green",
+      "in-progress": "blue",
+      "in-review": "purple",
+      "on-hold": "yellow",
+      "todo": "gray",
+      "urgent": "orange"
+    },
+    "statuses": [
+      "todo",
+      "in-progress",
+      "in-review",
+      "done",
+      "blocked",
+      "on-hold",
+      "urgent"
+    ],
+    "taskLifecycle": {
+      "archiveAfter": "30d",
+      "autoArchive": true,
+      "excludeDoneFromDefaultRetrieval": true,
+      "purgeAfter": null
+    },
+    "visibleColumns": [
+      "todo",
+      "in-progress",
+      "blocked",
+      "done",
+      "in-review"
+    ]
+  }
+}
