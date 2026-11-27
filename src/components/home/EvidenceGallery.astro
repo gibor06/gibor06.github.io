@@ -17,8 +17,13 @@ const evidence = [
 ];
 ---
 <section id="evidence" class="section wrap evidence-section">
-
   <div class="evidence-motion-tools"><span>{vi ? '10 DẤU MỐC · 2025–2026' : '10 MILESTONES · 2025–2026'}</span></div>
-  <div class="evidence-motion">{[evidence].map((row,rowIndex) => <div class:list={['evidence-lane', { 'lane-reverse':rowIndex===1 }]}><div class="evidence-track">{[0,1].map(copy => <div class="evidence-group" aria-hidden={copy===1 ? 'true' : undefined}>{row.map(([file,year,title,caption]) => <a class="evidence-card" href={withBase(`/assets/img/story/${file}`)} data-evidence data-caption={`${title} — ${caption}`} tabindex={copy===1 ? -1 : undefined} target="_blank" rel="noreferrer"><div class="evidence-image"><img src={withBase(`/assets/img/story/${file}`)} alt={copy===1 ? '' : `${title} — ${caption}`} loading="lazy" width="900" height="650" /><span class="evidence-zoom">{vi ? 'Xem đầy đủ' : 'View document'}</span></div><div class="evidence-meta"><span>{year}</span><span>HUIT</span></div><h3>{title}</h3><p>{caption}</p></a>)}</div>)}</div></div>)}</div>
+  <div class="evidence-motion">
+    <div id="evidence-lane" class="evidence-lane" role="region" aria-label={vi ? 'Minh chứng — cuộn ngang để khám phá' : 'Evidence — scroll horizontally to explore'} tabindex="0">
+      <div class="evidence-track"><div class="evidence-group">
+        {evidence.map(([file,year,title,caption]) => <a class="evidence-card" href={withBase(`/assets/img/story/${file}`)} data-evidence data-caption={`${title} — ${caption}`} target="_blank" rel="noreferrer"><div class="evidence-image"><img src={withBase(`/assets/img/story/${file}`)} alt={`${title} — ${caption}`} loading="lazy" width="900" height="650" /><span class="evidence-zoom">{vi ? 'Xem đầy đủ' : 'View document'}</span></div><div class="evidence-meta"><span>{year}</span><span>HUIT</span></div><h3>{title}</h3><p>{caption}</p></a>)}
+      </div></div>
+    </div>
+  </div>
 </section>
 <dialog class="evidence-dialog" aria-label={vi ? 'Xem minh chứng' : 'Document viewer'}><div class="evidence-dialog-bar"><p class="evidence-dialog-caption"></p><button class="evidence-close" aria-label={vi ? 'Đóng ảnh' : 'Close image'}>×</button></div><div class="evidence-dialog-image"><img alt="" /></div></dialog>

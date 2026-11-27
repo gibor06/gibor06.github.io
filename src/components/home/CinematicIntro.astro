@@ -1,0 +1,76 @@
+---
+interface Props { lang?: 'en' | 'vi' }
+const { lang = 'en' } = Astro.props;
+const vi = lang === 'vi';
+---
+
+<dialog class="cinematic-intro" id="cinematic-intro" aria-label={vi ? 'Giới thiệu GIBOR06' : 'Introducing GIBOR06'}>
+  <div class="intro-frame" aria-hidden="true">
+    <div class="intro-top"><span>G / 06</span><span>INDEPENDENT DEVELOPER</span></div>
+    <div class="intro-stage">
+      <p class="intro-eyebrow">THOUGHTFULLY DESIGNED. PRECISELY BUILT.</p>
+      <div class="intro-name">{'GIBOR06'.split('').map((letter, index) => <span style={`--letter:${index}`}>{letter}</span>)}</div>
+      <div class="intro-light"></div>
+      <p class="intro-signature">Trần Gia Bảo <span> / </span> Development & Research</p>
+    </div>
+    <div class="intro-bottom"><span>HO CHI MINH CITY, VN</span><span>PORTFOLIO / {new Date().getFullYear()}</span></div>
+  </div>
+  <button class="intro-skip" type="button" autofocus>{vi ? 'Bỏ qua' : 'Skip intro'} <span aria-hidden="true">↗</span></button>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const intro = document.getElementById('cinematic-intro');
+    if (!(intro instanceof HTMLDialogElement)) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let seen = false;
+    try { seen = sessionStorage.getItem('gibor-intro-seen') === '1'; } catch {}
+    if (seen || motion.matches || location.hash || typeof intro.showModal !== 'function') {
+      intro.remove();
+      return;
+    }
+    let timer;
+    const finish = () => {
+      clearTimeout(timer);
+      motion.removeEventListener('change', onMotion);
+      if (intro.open) intro.close();
+      intro.remove();
+    };
+    const onMotion = () => { if (motion.matches) finish(); };
+    intro.querySelector('button').addEventListener('click', finish);
+    intro.addEventListener('cancel', event => { event.preventDefault(); finish(); });
+    motion.addEventListener('change', onMotion);
+    intro.showModal();
+    try { sessionStorage.setItem('gibor-intro-seen', '1'); } catch {}
+    timer = setTimeout(finish, 2400);
+  })();
+</script>
+
+<style>
+  .cinematic-intro { position:fixed; inset:0; margin:0; border:0; padding:0; width:100%; max-width:none; height:100%; height:100dvh; max-height:none; background:#07090c; color:#f2f0e9; overflow:hidden; }
+  .cinematic-intro[open] { animation:intro-exit .65s cubic-bezier(.76,0,.24,1) 1.75s both; }
+  .cinematic-intro::backdrop { background:transparent; }
+  .intro-frame { height:100%; padding:clamp(24px,4vw,64px); display:flex; flex-direction:column; justify-content:space-between; background:radial-gradient(ellipse at 50% 52%,#1c24232e,transparent 60%); }
+  .intro-top,.intro-bottom { display:flex; justify-content:space-between; gap:16px; font:10px/1.5 monospace; letter-spacing:.18em; color:#858b87; }
+  .intro-top>span:first-child { color:#d5ef7b; }
+  .intro-stage { text-align:center; width:100%; margin-top:-24px; }
+  .intro-eyebrow { font:9px/1.8 monospace; letter-spacing:.24em; color:#92998f; animation:intro-detail .7s ease .2s both; }
+  .intro-name { display:flex; justify-content:center; overflow:hidden; margin:22px 0; font-family:Arial,Helvetica,sans-serif; font-size:clamp(48px,15vw,220px); font-weight:700; line-height:1.08; letter-spacing:-.075em; padding-right:.075em; }
+  .intro-name>span { display:inline-block; animation:intro-letter .95s cubic-bezier(.22,1,.36,1) both; animation-delay:calc(.12s + var(--letter)*.065s); }
+  .intro-light { position:relative; height:1px; width:min(520px,75%); margin:0 auto; background:#343a31; transform-origin:left; animation:intro-line 1.2s cubic-bezier(.76,0,.24,1) .2s both; }
+  .intro-light::after { content:''; position:absolute; inset:-1px 0; background:linear-gradient(90deg,transparent,#d5ef7b,transparent); box-shadow:0 0 22px #d5ef7b55; animation:intro-sweep 1.45s ease both; }
+  .intro-signature { margin:22px 0 0; font:11px/1.7 monospace; letter-spacing:.08em; color:#a3a69d; animation:intro-detail .7s ease .7s both; }
+  .intro-signature span { padding:0 12px; color:#d5ef7b; }
+  .intro-skip { position:absolute; bottom:75px; right:clamp(24px,4vw,64px); border:1px solid #41463c; border-radius:99px; padding:10px 17px; color:#c4c8ba; background:transparent; font:11px monospace; cursor:pointer; }
+  .intro-skip span { margin-left:12px; color:#d5ef7b; }
+  .intro-skip:hover { background:#d5ef7b; color:#07090c; }
+  .intro-skip:hover span { color:inherit; }
+  .intro-skip:focus-visible { outline:2px solid #d5ef7b; outline-offset:4px; }
+  @keyframes intro-letter { from { transform:translateY(115%) rotate(5deg); opacity:0; filter:blur(8px); } to { transform:translateY(0) rotate(0); opacity:1; filter:blur(0); } }
+  @keyframes intro-detail { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes intro-line { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @keyframes intro-sweep { from { opacity:0; transform:scaleX(.1); } 50% { opacity:1; } to { opacity:.35; transform:scaleX(1); } }
+  @keyframes intro-exit { to { transform:translateY(-102%); visibility:hidden; } }
+  @media(max-width:600px) { .intro-top,.intro-bottom { font-size:8px; letter-spacing:.09em; } .intro-eyebrow { font-size:7px; letter-spacing:.12em; } .intro-signature { font-size:9px; } .intro-signature span { padding:0 5px; } .intro-skip { bottom:65px; } }
+  @media(prefers-reduced-motion:reduce) { .cinematic-intro { display:none; } }
+</style>

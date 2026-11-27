@@ -30,23 +30,57 @@ export function initPhotoStory() {
     new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; schedule(); }).observe(story);
     schedule();
   }
-  const evidenceSection = document.querySelector<HTMLElement>('.evidence-section');
-  const evidencePause = document.querySelector<HTMLButtonElement>('.evidence-pause');
-  const evidenceLayout = document.querySelector<HTMLButtonElement>('.evidence-layout');
-  evidencePause?.addEventListener('click', () => {
-    const paused = evidenceSection?.classList.toggle('is-paused') || false;
-    evidencePause.setAttribute('aria-pressed', String(paused));
-    evidencePause.textContent = (paused ? evidencePause.dataset.playText : evidencePause.dataset.pauseText) || '';
+  // Native focus scrolling may leave a partly visible card clipped at the edge.
+  document.querySelectorAll<HTMLElement>('.evidence-lane, .google-certificate-lane').forEach(lane => {
+    const track = lane.firstElementChild as HTMLElement | null;
+    const group = track?.firstElementChild as HTMLElement | null;
+    if (!track || !group) return;
+    const copy = group.cloneNode(true) as HTMLElement;
+    copy.classList.add('document-lane-copy');
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('a').forEach(link => link.tabIndex = -1);
+    copy.querySelectorAll('img').forEach(image => image.alt = '');
+    track.append(copy);
+    let hovered = false, visible = false;
+    const direction = lane.id === 'certificate-lane' ? -1 : 1;
+    let frame = 0, last = 0, position = 0;
+    const canRun = () => !hovered && visible && !motion.matches && !document.hidden && !lane.contains(document.activeElement) && !document.querySelector('.evidence-dialog[open]');
+    const animate = (time: number) => {
+      frame = 0;
+      if (!canRun()) { last = 0; return; }
+      if (!last) position = lane.scrollLeft;
+      const elapsed = last ? Math.min(time - last, 50) : 0;
+      last = time;
+      const cycle = copy.offsetLeft - group.offsetLeft;
+      if (cycle <= 0) return;
+      position = ((position + direction * elapsed * .065) % cycle + cycle) % cycle;
+      lane.scrollLeft = position;
+      frame = requestAnimationFrame(animate);
+    };
+    const schedule = () => {
+      if (canRun()) { if (!frame) { last = 0; frame = requestAnimationFrame(animate); } }
+      else { cancelAnimationFrame(frame); frame = 0; last = 0; }
+    };
+    lane.addEventListener('pointerdown', event => { if (event.pointerType === 'touch') { hovered = true; schedule(); } });
+    lane.addEventListener('pointerup', event => { if (event.pointerType === 'touch') { hovered = false; schedule(); } });
+    lane.addEventListener('pointercancel', () => { hovered = false; schedule(); });
+    lane.addEventListener('focusin', schedule);
+    lane.addEventListener('focusout', () => requestAnimationFrame(schedule));
+    document.addEventListener('visibilitychange', schedule);
+    document.querySelector('.evidence-dialog')?.addEventListener('close', schedule);
+    motion.addEventListener('change', schedule);
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; schedule(); }).observe(lane);
+    schedule();
+    lane.addEventListener('focusin', event => {
+      const card = event.target;
+      if (!(card instanceof HTMLElement) || !card.matches('.evidence-card, .google-certificate')) return;
+      const bounds = lane.getBoundingClientRect();
+      const rect = card.getBoundingClientRect();
+      const padding = 8;
+      if (rect.left < bounds.left + padding) lane.scrollLeft += rect.left - bounds.left - padding;
+      else if (rect.right > bounds.right - padding) lane.scrollLeft += rect.right - bounds.right + padding;
+    });
   });
-  evidenceLayout?.addEventListener('click', () => {
-    const grid = evidenceSection?.classList.toggle('is-grid') || false;
-    evidenceLayout.setAttribute('aria-pressed', String(grid));
-    evidenceLayout.textContent = (grid ? evidenceLayout.dataset.motionText : evidenceLayout.dataset.gridText) || '';
-  });
-  if (evidenceSection) {
-    new IntersectionObserver(([entry]) => evidenceSection.classList.toggle('is-offscreen', !entry.isIntersecting)).observe(evidenceSection);
-    document.addEventListener('visibilitychange', () => evidenceSection.classList.toggle('is-hidden-page', document.hidden));
-  }
   const dialog = document.querySelector<HTMLDialogElement>('.evidence-dialog');
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const image = dialog.querySelector('img');
@@ -56,10 +90,8 @@ export function initPhotoStory() {
     event.preventDefault();
     if (image) { image.src = link.href; image.alt = link.dataset.caption || ''; }
     if (caption) caption.textContent = link.dataset.caption || '';
-    evidenceSection?.classList.add('is-viewing');
     dialog.showModal();
   }));
-  dialog.addEventListener('close', () => evidenceSection?.classList.remove('is-viewing'));
   dialog.querySelector('.evidence-close')?.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 }
