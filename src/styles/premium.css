@@ -82,6 +82,19 @@ h2 .serif{font-weight:500;letter-spacing:inherit}.section-heading .eyebrow,.rese
 @media(max-width:999px){.hero-content{gap:20px}.hero-profile h1{font-size:clamp(35px,5.1vw,51px)}.profile-role{font-size:26px}.profile-kicker{font-size:9px;gap:8px}.profile-rule{width:16px}.profile-summary{font-size:14px}.hero-profile .hero-cta{gap:18px}.hero-profile .button{font-size:13px;padding:14px 17px}.profile-cv{font-size:13px;gap:6px}.profile-facts{gap:20px}.fact-label{font-size:10px}.fact-value{font-size:16px}.fact-value small{font-size:11px}}
 @media(max-width:699px){.hero-content{grid-template-columns:1fr;padding-block:36px 15px;gap:28px;min-height:auto}.hero-profile{padding-block:0}.profile-kicker{font-size:10px;gap:10px;letter-spacing:.035em;margin-bottom:20px}.profile-rule{width:20px}.hero-profile h1{font-size:clamp(36px,9.1vw,60px);line-height:1.25;letter-spacing:-.055em}.profile-role{font-size:clamp(24px,6.4vw,35px);margin-top:8px}.profile-summary{font-size:15px;line-height:1.95;margin-top:20px;max-width:440px}.profile-stack{margin-top:18px;gap:7px}.profile-stack>span{font-size:12px;padding:5px 9px}.hero-profile .hero-cta{margin-top:25px;gap:22px}.hero-profile .button{font-size:14px;padding:15px 19px}.profile-cv{font-size:13px;gap:7px}.profile-facts{margin-top:27px;padding-top:19px;gap:35px}.fact-label{font-size:10px}.fact-value{font-size:16px}.fact-value small{font-size:12px}.hero-art{height:320px}}
 @media(max-width:359px){.profile-kicker{font-size:9px;gap:7px}.hero-profile h1{font-size:35px}.profile-role{font-size:24px}.hero-profile .hero-cta{gap:15px}.hero-profile .button{padding:14px 15px;font-size:13px}.profile-cv{font-size:12px}.profile-facts{gap:25px}}
+/* Narrow layouts keep action labels intact instead of shrinking both links. */
+@media(max-width:699px){
+  .site-header{height:68px;padding-inline:20px;gap:12px}
+  .site-header.scrolled{height:64px}
+  .site-header .wordmark{font-size:28px;flex-shrink:0}
+  .header-actions{gap:12px}
+  .header-actions .locale{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:44px}
+  .header-contact{display:none}
+  .hero-profile .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-profile .button{justify-content:center;min-height:52px;white-space:nowrap}
+  .profile-cv{justify-content:center;min-height:44px;white-space:nowrap}
+  .profile-cv svg{flex-shrink:0}
+}
 /* Compact hero spacing beneath navigation. */
 .hero{padding-top:0}
 .hero-content{padding-block:28px 36px;min-height:0}
